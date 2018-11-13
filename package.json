@@ -1,0 +1,64 @@
+{
+  "name": "petprofinder-client",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "predev": "yarn run codegen",
+    "codegen:frontend": "apollo codegen:generate types/api.d.ts --queries='**/!(*.local|*.blog).ts' --addTypename --schema frontendSchema.json --target typescript --outputFlat",
+    "codegen": "yarn run codegen:frontend",
+    "precodegen:frontend": "apollo schema:download frontendSchema.json --endpoint=http://localhost:4000/graphql",
+    "start": "NODE_ENV=production node server.js",
+    "tunnel": "lt --port 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinhokang/pet-pro-finder-client.git"
+  },
+  "author": "Shinho Kang <shinho601@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-boost": "^0.1.16",
+    "axios": "^0.18.0",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.9.2",
+    "javascript-time-ago": "^1.0.31",
+    "js-cookie": "^2.2.0",
+    "lodash.sortby": "^4.7.0",
+    "next": "^7.0.0",
+    "next-ga": "^2.3.1",
+    "next-nprogress": "^1.1.0",
+    "next-offline": "^3.0.3",
+    "next-with-apollo": "^3.1.3",
+    "nookies": "^1.1.1",
+    "polished": "^1.9.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-apollo": "^2.1.11",
+    "react-click-outside": "^3.0.1",
+    "react-dom": "^16.4.1",
+    "react-facebook-login": "^4.1.0",
+    "react-lazyload": "^2.3.0",
+    "react-markdown": "^3.4.1",
+    "react-textarea-autosize": "^7.1.0-1",
+    "react-toastify": "^4.3.1",
+    "styled-components": "^3.3.3",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/next": "^6.0.4",
+    "@types/prop-types": "^15.5.4",
+    "@zeit/next-typescript": "^1.1.0",
+    "babel-plugin-styled-components": "^1.5.1",
+    "localtunnel": "^1.9.1",
+    "tslint-config-prettier": "^1.14.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^2.9.2"
+  },
+  "now": {
+    "name": "petprofinder-client",
+    "alias": "petprofinder-api"
+  }
+}

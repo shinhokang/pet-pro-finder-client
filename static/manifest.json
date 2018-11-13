@@ -1,0 +1,20 @@
+{
+  "name": "Pet Pro Finder",
+  "short_name": "Pet Pro Finder",
+  "theme_color": "#34495E",
+  "background_color": "#fff",
+  "start_url": "../",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/static/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
