@@ -3,7 +3,8 @@ import Head from "next/head";
 import styled from "../typed-components";
 import Wrapper from "../components/wrapper";
 import Button from "../components/button";
-import withLogin from "../lib/withLogin";
+import routes from "../routes";
+import Link from "next/link";
 
 const Container = styled.div`
   height: 50vh;
@@ -150,15 +151,19 @@ const About = ({ fbLogin }) => (
         </SellPoint>
       </SellPoints>
       <JoinHero>
-        <Button
-          accent={true}
-          text={"독프라블럼 가입하기"}
-          fontSize={32}
-          onClick={fbLogin}
-        />
+        <Link href={routes.join}>
+          <a>
+            <Button
+              accent={true}
+              text={"회원가입"}
+              fontSize={32}
+              onClick={fbLogin}
+            />
+          </a>
+        </Link>
       </JoinHero>
     </Wrapper>
   </React.Fragment>
 );
 
-export default withLogin(About);
+export default About;
