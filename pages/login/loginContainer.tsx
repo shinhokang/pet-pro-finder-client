@@ -46,7 +46,8 @@ export default class LoginContainer extends React.Component<IProps, IState> {
     } as any);
   };
 
-  public handleLogin = (email: string, password: string) => {
+  public handleLogin = () => {
+    const { email, password } = this.state;
     toast.info(email);
     toast.info(password);
   };

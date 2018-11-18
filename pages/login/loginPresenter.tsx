@@ -134,6 +134,20 @@ const ProductEditorPresenter: React.SFC<IProps> = ({
               accent={false}
             />
           </SocialLoginButton>
+          <SocialLoginButton>
+            <Button
+              text="페이스북 아이디로 로그인하기"
+              onClick={handleKakaoLogin}
+              accent={false}
+            />
+          </SocialLoginButton>
+          <SocialLoginButton>
+            <Button
+              text="구글 아이디로 로그인하기"
+              onClick={handleKakaoLogin}
+              accent={false}
+            />
+          </SocialLoginButton>
         </SocialLoginContainer>
       </Card>
     </Container>
