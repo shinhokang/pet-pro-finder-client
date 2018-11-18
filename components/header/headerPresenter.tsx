@@ -1,7 +1,6 @@
 import Link from "next/link";
 import routes from "../../routes";
 import styled, { keyframes } from "../../typed-components";
-// import Notifications from "../notifications";
 import Button from "../button";
 import RoundImage from "../roundImage";
 import { getMe } from "types/api";
@@ -160,11 +159,14 @@ const Header: React.SFC<IProps> = ({
         <NavColumn>
           <Link prefetch href={routes.login}>
             <a>
-              <Button accent={false} text={`로그인`} />
+              <Button accent={false} text={`는`} />
             </a>
           </Link>
-
-          <Button accent={true} onClick={fbLogin} text={`가입하기`} />
+          <Link prefetch href={routes.join}>
+            <a>
+              <Button accent={true} text={`회원가입`} />
+            </a>
+          </Link>
         </NavColumn>
       )}
       {isLoggedIn && (

@@ -7,8 +7,6 @@ import Input from "../../components/input";
 import Title from "../../components/title";
 import Form from "../../components/form";
 import Button from "../../components/button";
-import routes from "../../routes";
-import Link from "next/link";
 
 const Container = styled.div`
   max-width: 500px;
@@ -61,21 +59,25 @@ const SocialLoginButton = styled.div`
 `;
 
 interface IProps {
+  name: string;
   email: string;
   password: string;
+  phoneNumber: string;
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  handleLogin: () => void;
+  handleJoin: () => void;
   handleFacebookLogin: () => void;
   handleGoogleLogin: () => void;
   handleKakaoLogin: () => void;
   handleNaverLogin: () => void;
 }
 
-const LoginPresenter: React.SFC<IProps> = ({
+const JoinPresenter: React.SFC<IProps> = ({
+  name,
   email,
   password,
+  phoneNumber,
   handleInputChange,
-  handleLogin,
+  handleJoin,
   handleFacebookLogin,
   handleGoogleLogin,
   handleKakaoLogin,
@@ -83,16 +85,24 @@ const LoginPresenter: React.SFC<IProps> = ({
 }) => (
   <Wrapper>
     <Head>
-      <title>Dog Problem | 로그인</title>
+      <title>Dog Problem | 회원가입</title>
     </Head>
     <Container>
-      <ETitle>로그인</ETitle>
+      <ETitle>회원가입</ETitle>
       <Card>
-        <EForm onSubmit={handleLogin}>
+        <EForm onSubmit={handleJoin}>
           <FormInputs>
             <EInput
               required={true}
               type={"text"}
+              name={"name"}
+              placeholder={"이름 *"}
+              value={name}
+              onChange={handleInputChange}
+            />
+            <EInput
+              required={true}
+              type={"email"}
               name={"email"}
               placeholder={"Email *"}
               value={email}
@@ -106,16 +116,19 @@ const LoginPresenter: React.SFC<IProps> = ({
               value={password}
               onChange={handleInputChange}
             />
+            <EInput
+              required={false}
+              type={"text"}
+              name={"phoneNumber"}
+              placeholder={"전화번호"}
+              value={phoneNumber}
+              onChange={handleInputChange}
+            />
           </FormInputs>
           <EFormButtons>
             <EFormButton>
-              <Button text="로그인" onClick={handleLogin} accent={true} />
+              <Button text="로그인" onClick={handleJoin} accent={true} />
             </EFormButton>
-            <div>
-              <Link prefetch href={routes.join}>
-                <a>회원가입</a>
-              </Link>
-            </div>
           </EFormButtons>
         </EForm>
         <hr />
@@ -154,4 +167,4 @@ const LoginPresenter: React.SFC<IProps> = ({
   </Wrapper>
 );
 
-export default LoginPresenter;
+export default JoinPresenter;
