@@ -45,7 +45,7 @@ const withLogin = Component =>
         email,
         id: fbId
       } = response;
-      this.toastId = toast.info("Loggin you in");
+      this.toastId = toast.info("로그인하는 중입니다.");
       this.facebookLogin({
         variables: {
           firstName,

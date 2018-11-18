@@ -139,11 +139,6 @@ const Header: React.SFC<IProps> = ({
         <Navigation>
           <ul>
             <li>
-              <Link prefetch href={routes.home}>
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
               <Link prefetch href={routes.trainers}>
                 <a>전문가 검색</a>
               </Link>
@@ -163,6 +158,12 @@ const Header: React.SFC<IProps> = ({
       </NavColumn>
       {!isLoggedIn && (
         <NavColumn>
+          <Link prefetch href={routes.login}>
+            <a>
+              <Button accent={false} text={`로그인`} />
+            </a>
+          </Link>
+
           <Button accent={true} onClick={fbLogin} text={`가입하기`} />
         </NavColumn>
       )}
