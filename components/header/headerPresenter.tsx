@@ -159,7 +159,7 @@ const Header: React.SFC<IProps> = ({
         <NavColumn>
           <Link prefetch href={routes.login}>
             <a>
-              <Button accent={false} text={`는`} />
+              <Button accent={false} text={`로그인`} />
             </a>
           </Link>
           <Link prefetch href={routes.join}>
