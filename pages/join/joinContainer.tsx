@@ -35,10 +35,6 @@ export default class JoinContainer extends React.Component<IProps, IState> {
         phoneNumber={phoneNumber}
         handleInputChange={this.handleInputChange}
         handleJoin={this.handleJoin}
-        handleFacebookLogin={this.handleFacebookLogin}
-        handleGoogleLogin={this.handleGoogleLogin}
-        handleKakaoLogin={this.handleKakaoLogin}
-        handleNaverLogin={this.handleNaverLogin}
       />
     );
   }
@@ -58,17 +54,5 @@ export default class JoinContainer extends React.Component<IProps, IState> {
     toast.info(email);
     toast.info(password);
     toast.info(phoneNumber);
-  };
-  public handleFacebookLogin = () => {
-    toast.info("Facebook login");
-  };
-  public handleGoogleLogin = () => {
-    toast.info("Google login");
-  };
-  public handleKakaoLogin = () => {
-    toast.info("Kakao Login");
-  };
-  public handleNaverLogin = () => {
-    toast.info("Naver Login");
   };
 }

@@ -9,6 +9,7 @@ import Form from "../../components/form";
 import Button from "../../components/button";
 import routes from "../../routes";
 import Link from "next/link";
+import SocialLogin from "../../components/socialLogin";
 
 const Container = styled.div`
   max-width: 500px;
@@ -50,36 +51,18 @@ const EFormButton = styled.div`
   margin: 1.4rem;
 `;
 
-const SocialLoginContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const SocialLoginButton = styled.div`
-  margin: 1.4rem;
-`;
-
 interface IProps {
   email: string;
   password: string;
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleLogin: () => void;
-  handleFacebookLogin: () => void;
-  handleGoogleLogin: () => void;
-  handleKakaoLogin: () => void;
-  handleNaverLogin: () => void;
 }
 
 const LoginPresenter: React.SFC<IProps> = ({
   email,
   password,
   handleInputChange,
-  handleLogin,
-  handleFacebookLogin,
-  handleGoogleLogin,
-  handleKakaoLogin,
-  handleNaverLogin
+  handleLogin
 }) => (
   <Wrapper>
     <Head>
@@ -118,38 +101,8 @@ const LoginPresenter: React.SFC<IProps> = ({
             </div>
           </EFormButtons>
         </EForm>
-        <hr />
-        <SocialLoginContainer>
-          <SocialLoginButton>
-            <Button
-              text="네이버로 로그인"
-              onClick={handleNaverLogin}
-              accent={false}
-            />
-          </SocialLoginButton>
-          <SocialLoginButton>
-            <Button
-              text="카카오로 로그인"
-              onClick={handleKakaoLogin}
-              accent={false}
-            />
-          </SocialLoginButton>
-          <SocialLoginButton>
-            <Button
-              text="페이스북으로 로그인"
-              onClick={handleFacebookLogin}
-              accent={false}
-            />
-          </SocialLoginButton>
-          <SocialLoginButton>
-            <Button
-              text="구글로 로그인"
-              onClick={handleGoogleLogin}
-              accent={false}
-            />
-          </SocialLoginButton>
-        </SocialLoginContainer>
       </Card>
+      <SocialLogin />
     </Container>
   </Wrapper>
 );

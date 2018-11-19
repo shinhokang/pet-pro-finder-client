@@ -7,6 +7,7 @@ import Input from "../../components/input";
 import Title from "../../components/title";
 import Form from "../../components/form";
 import Button from "../../components/button";
+import SocialLogin from "../../components/socialLogin";
 
 const Container = styled.div`
   max-width: 500px;
@@ -48,16 +49,6 @@ const EFormButton = styled.div`
   margin: 1.4rem;
 `;
 
-const SocialLoginContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const SocialLoginButton = styled.div`
-  margin: 1.4rem;
-`;
-
 interface IProps {
   name: string;
   email: string;
@@ -65,10 +56,6 @@ interface IProps {
   phoneNumber: string;
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleJoin: () => void;
-  handleFacebookLogin: () => void;
-  handleGoogleLogin: () => void;
-  handleKakaoLogin: () => void;
-  handleNaverLogin: () => void;
 }
 
 const JoinPresenter: React.SFC<IProps> = ({
@@ -77,11 +64,7 @@ const JoinPresenter: React.SFC<IProps> = ({
   password,
   phoneNumber,
   handleInputChange,
-  handleJoin,
-  handleFacebookLogin,
-  handleGoogleLogin,
-  handleKakaoLogin,
-  handleNaverLogin
+  handleJoin
 }) => (
   <Wrapper>
     <Head>
@@ -127,42 +110,12 @@ const JoinPresenter: React.SFC<IProps> = ({
           </FormInputs>
           <EFormButtons>
             <EFormButton>
-              <Button text="로그인" onClick={handleJoin} accent={true} />
+              <Button text="회원가입" onClick={handleJoin} accent={true} />
             </EFormButton>
           </EFormButtons>
         </EForm>
-        <hr />
-        <SocialLoginContainer>
-          <SocialLoginButton>
-            <Button
-              text="네이버로 로그인"
-              onClick={handleNaverLogin}
-              accent={false}
-            />
-          </SocialLoginButton>
-          <SocialLoginButton>
-            <Button
-              text="카카오로 로그인"
-              onClick={handleKakaoLogin}
-              accent={false}
-            />
-          </SocialLoginButton>
-          <SocialLoginButton>
-            <Button
-              text="페이스북으로 로그인"
-              onClick={handleFacebookLogin}
-              accent={false}
-            />
-          </SocialLoginButton>
-          <SocialLoginButton>
-            <Button
-              text="구글로 로그인"
-              onClick={handleGoogleLogin}
-              accent={false}
-            />
-          </SocialLoginButton>
-        </SocialLoginContainer>
       </Card>
+      <SocialLogin />
     </Container>
   </Wrapper>
 );

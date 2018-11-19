@@ -29,10 +29,6 @@ export default class LoginContainer extends React.Component<IProps, IState> {
         password={password}
         handleInputChange={this.handleInputChange}
         handleLogin={this.handleLogin}
-        handleFacebookLogin={this.handleFacebookLogin}
-        handleGoogleLogin={this.handleGoogleLogin}
-        handleKakaoLogin={this.handleKakaoLogin}
-        handleNaverLogin={this.handleNaverLogin}
       />
     );
   }
@@ -50,17 +46,5 @@ export default class LoginContainer extends React.Component<IProps, IState> {
     const { email, password } = this.state;
     toast.info(email);
     toast.info(password);
-  };
-  public handleFacebookLogin = () => {
-    toast.info("Facebook login");
-  };
-  public handleGoogleLogin = () => {
-    toast.info("Google login");
-  };
-  public handleKakaoLogin = () => {
-    toast.info("Kakao Login");
-  };
-  public handleNaverLogin = () => {
-    toast.info("Naver Login");
   };
 }
