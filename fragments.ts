@@ -1,4 +1,28 @@
-// import { gql } from "apollo-boost";
+import { gql } from "apollo-boost";
+
+export const TRAINER_FRAGMENT = gql`
+  fragment TrainerParts on Trainer {
+    id
+    user {
+      id
+      username
+      firstName
+      lastName
+    }
+    description
+    licenses
+    experiences
+    images
+    videos
+    trainingPrograms {
+      id
+      description
+      price
+      images
+      videos
+    }
+  }
+`;
 
 // export const MAKER_FRAGMENT = gql`
 //   fragment MakerParts on User {
