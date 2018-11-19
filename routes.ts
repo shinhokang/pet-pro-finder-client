@@ -1,14 +1,13 @@
 export default {
   home: "/",
   join: "/join",
-  asJoin: "/join",
   login: "/login",
   term: "/term",
   help: "/help",
+  trainers: "/trainers",
 
   makers: "/makers",
   about: "/about",
-  trainers: "/trainers",
   community: "/community",
 
   blog: "/launched",

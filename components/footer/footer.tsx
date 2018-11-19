@@ -74,7 +74,7 @@ const Footer = () => (
               rel="noopener"
               target={"_blank"}
             >
-              Shinho Kang
+              Team Dog Problem
             </FLink>
           </Text>
         </Copyright>

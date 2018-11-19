@@ -151,7 +151,7 @@ const About = ({ fbLogin }) => (
         </SellPoint>
       </SellPoints>
       <JoinHero>
-        <Link href={routes.join}>
+        <Link prefetch href={routes.join}>
           <a>
             <Button
               accent={true}
