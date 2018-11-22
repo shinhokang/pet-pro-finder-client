@@ -130,8 +130,8 @@ const CardContent: React.SFC<IPresenterProps> = ({
             <Badge bgColor={"#FEF48B"} text={"Best"} icon={"👍"} />
             <Badge text={"4.9/5.0"} icon={"⭐"} />
             <Badge text={83} icon={"💬"} />
-            <span> </span>
             <Badge bgColor={"#DBE9F1"} text={"남양주시"} icon={"⛯"} />
+            <Badge bgColor={"#DBE9F1"} text={"강동구"} icon={"⛯"} />
           </React.Fragment>
         </Badges>
       </Footer>
