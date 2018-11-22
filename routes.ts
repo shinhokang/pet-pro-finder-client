@@ -5,6 +5,13 @@ export default {
   term: "/term",
   help: "/help",
   trainers: "/trainers",
+  trainerDetail: (id: number) => {
+    return `/trainer?id=${id}`;
+  },
+  asTrainerDetail: (name: string) => {
+    const formatted = name.toLowerCase().replace(" ", "-");
+    return `/trainer/${formatted}/`;
+  },
 
   makers: "/makers",
   about: "/about",

@@ -10,7 +10,6 @@ import { getAllTrainers } from "types/api";
 
 const TrainerGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 320px);
   grid-gap: 40px;
   margin-bottom: 60px;
   @media (max-width: 900px) {
@@ -40,31 +39,34 @@ const TrainersPresenter: React.SFC<IProps> = ({
       <Tab link={routes.trainers} text={"가격"} selected={false} />
     </Tabs>
     <TrainerGrid>
-      {/* {trainers &&
+      {trainers &&
         trainers.map(
           trainer =>
             trainer && (
               <BigDetailCard
                 key={trainer.id}
-                isLink={true}
-                link={routes.trainerDetail(`${trainer.id}`)}
-                linkAs={routes.asTrainerDetail(`${trainer.id}`)}
-                icon={trainer.logo || ""}
-                authorAvatar={""}
-                title={trainer.name}
+                isLink={false}
+                link={routes.trainerDetail(trainer.id)}
+                linkAs={routes.asTrainerDetail(`${trainer.user.name}`)}
+                icon={
+                  (trainer.images &&
+                    trainer.images.length > 0 &&
+                    trainer.images[0]) ||
+                  ""
+                }
+                authorAvatar={trainer.user.profileImage || ""}
+                title={trainer.description}
                 showSubtitle={true}
-                subtitle={trainer.description}
-                toDoNumber={`${product.completedGoalCount}/${
-                  product.goalCount
-                }`}
+                subtitle={`${trainer.user.name} 훈련사`}
+                underTitle={"테스트"}
                 hasAuthor={true}
-                needsHelp={product.needsHelp}
-                commentNumber={product.commentCount}
-                voteNumber={product.voteCount}
-                isFinished={product.isLaunched}
+                needsHelp={false}
+                commentNumber={0}
+                voteNumber={0}
+                isFinished={false}
               />
             )
-        )} */}
+        )}
       {trainers && trainers.length === 0 && (
         <h1 className={"thickText"}>등록된 훈련사가 없습니다.</h1>
       )}

@@ -3,9 +3,13 @@ import Link from "next/link";
 import styled from "../../typed-components";
 import Badge from "../badge";
 import RoundImage from "../roundImage";
+import SquareImage from "../squareImage";
 import ImagePlaceholder from "../imagePlaceholder";
 
-const Span = styled.span``;
+const Span = styled.span`
+  display: flex;
+  flex-direction: row;
+`;
 
 const Container = styled<{ isLink: boolean }, any>("div")`
   border-radius: ${props => props.theme.borderRadius};
@@ -16,23 +20,27 @@ const Container = styled<{ isLink: boolean }, any>("div")`
   width: 100%;
   & ${Span} {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
   }
 `;
 
 const IconContainer = styled.div`
-  margin-bottom: 15px;
+  margin-right: 30px;
 `;
 
-const Icon = styled(RoundImage)`
-  height: 80px;
-  width: 80px;
+const Icon = styled(SquareImage)`
+  height: 200px;
+  width: 200px;
   display: block;
 `;
 
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const Title = styled.h4`
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
 `;
@@ -55,7 +63,9 @@ const Footer = styled.footer`
 `;
 
 const Maker = styled(RoundImage)`
+  margin-left: 10px;
   height: 30px;
+  width: 30px;
   min-width: 30px;
   border: 0;
 `;
@@ -107,40 +117,25 @@ const CardContent: React.SFC<IPresenterProps> = ({
         <ImagePlaceholder letter={title[0]} size={80} />
       )}
     </IconContainer>
-    <Title>{title}</Title>
-    {underTitle && <Small>{underTitle}</Small>}
-    {showSubtitle && <Pitch>{subtitle}</Pitch>}
-    <Footer>
-      <Badges>
-        <React.Fragment>
-          {toDoNumber !== undefined &&
-            parseInt(toDoNumber) > 0 && <Badge text={toDoNumber} icon={"✅"} />}
-          {isFinished && <Badge text={"Finished"} icon={"🚀"} />}
-          {needsHelp && <Badge text={"Need Help!"} icon={"⚠️"} />}
-          {commentNumber !== undefined &&
-            commentNumber > 0 && <Badge text={commentNumber} icon={"💬"} />}
-          {voteNumber !== undefined &&
-            voteNumber > 0 && <Badge text={voteNumber} icon={"👏🏻"} />}
-          {streakNumber !== undefined && (
-            <Badge
-              bgColor={"#FEF48B"}
-              text={streakNumber}
-              icon={"🔥"}
-              title={"To Dos Completed"}
-            />
-          )}
-          {launchedNumber !== undefined && (
-            <Badge
-              bgColor={"#DBE9F1"}
-              text={launchedNumber}
-              icon={"🚀"}
-              title={"Products Finished"}
-            />
-          )}
-        </React.Fragment>
-      </Badges>
-      {hasAuthor && <Maker alt={title} src={authorAvatar!} />}
-    </Footer>
+    <ContentContainer>
+      <Title>{title}</Title>
+      {underTitle && <Small>{underTitle}</Small>}
+      <Span>
+        {showSubtitle && <Pitch>{subtitle}</Pitch>}
+        {hasAuthor && <Maker alt={title} src={authorAvatar!} />}
+      </Span>
+      <Footer>
+        <Badges>
+          <React.Fragment>
+            <Badge bgColor={"#FEF48B"} text={"Best"} icon={"👍"} />
+            <Badge text={"4.9/5.0"} icon={"⭐"} />
+            <Badge text={83} icon={"💬"} />
+            <span> </span>
+            <Badge bgColor={"#DBE9F1"} text={"남양주시"} icon={"⛯"} />
+          </React.Fragment>
+        </Badges>
+      </Footer>
+    </ContentContainer>
   </React.Fragment>
 );
 

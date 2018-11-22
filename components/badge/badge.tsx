@@ -19,7 +19,6 @@ const Container = styled<{ bgColor: any }, any>("div")`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: help;
   height: auto;
   &:last-child {
     margin-right: 0px;
