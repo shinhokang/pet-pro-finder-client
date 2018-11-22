@@ -7,7 +7,7 @@ const logOut = () => {
     });
   } else {
     Cookie.remove("X-JWT", {
-      domain: ".localtunnel.me"
+      domain: ".localhost"
     });
   }
   window.location.href = "/";

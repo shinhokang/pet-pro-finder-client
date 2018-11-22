@@ -8,9 +8,24 @@
 export interface getAllTrainers_GetAllTrainers_trainers_user {
   __typename: "User";
   id: number;
-  username: string;
-  firstName: string;
-  lastName: string;
+  name: string | null;
+  description: string | null;
+  profileImage: string | null;
+}
+
+export interface getAllTrainers_GetAllTrainers_trainers_licenses {
+  __typename: "License";
+  text: string;
+}
+
+export interface getAllTrainers_GetAllTrainers_trainers_experiences {
+  __typename: "Experience";
+  text: string;
+}
+
+export interface getAllTrainers_GetAllTrainers_trainers_workingAreas {
+  __typename: "WorkingArea";
+  text: string;
 }
 
 export interface getAllTrainers_GetAllTrainers_trainers_trainingPrograms {
@@ -27,10 +42,11 @@ export interface getAllTrainers_GetAllTrainers_trainers {
   id: number;
   user: getAllTrainers_GetAllTrainers_trainers_user;
   description: string;
-  licenses: (string | null)[] | null;
-  experiences: (string | null)[] | null;
+  licenses: (getAllTrainers_GetAllTrainers_trainers_licenses | null)[] | null;
+  experiences: (getAllTrainers_GetAllTrainers_trainers_experiences | null)[] | null;
   images: (string | null)[] | null;
   videos: (string | null)[] | null;
+  workingAreas: (getAllTrainers_GetAllTrainers_trainers_workingAreas | null)[] | null;
   trainingPrograms: (getAllTrainers_GetAllTrainers_trainers_trainingPrograms | null)[] | null;
 }
 
@@ -50,23 +66,20 @@ export interface getAllTrainers {
 // GraphQL mutation operation: logUserIn
 // ====================================================
 
-export interface logUserIn_ConnectFB {
-  __typename: "ConnectFBResponse";
+export interface logUserIn_Login {
+  __typename: "LoginResponse";
   ok: boolean;
   error: string | null;
   token: string | null;
-  isNew: boolean;
 }
 
 export interface logUserIn {
-  ConnectFB: logUserIn_ConnectFB;
+  Login: logUserIn_Login;
 }
 
 export interface logUserInVariables {
-  firstName: string;
-  lastName: string;
-  email?: string | null;
-  fbId: string;
+  email: string;
+  password: string;
 }
 
 /* tslint:disable */
@@ -79,10 +92,11 @@ export interface logUserInVariables {
 export interface getMe_Me_user {
   __typename: "User";
   id: number;
-  username: string;
+  email: string;
+  name: string | null;
   phoneNumber: string | null;
-  profileDescription: string | null;
-  profilePhoto: string;
+  description: string | null;
+  profileImage: string | null;
 }
 
 export interface getMe_Me {
@@ -104,9 +118,24 @@ export interface getMe {
 export interface TrainerParts_user {
   __typename: "User";
   id: number;
-  username: string;
-  firstName: string;
-  lastName: string;
+  name: string | null;
+  description: string | null;
+  profileImage: string | null;
+}
+
+export interface TrainerParts_licenses {
+  __typename: "License";
+  text: string;
+}
+
+export interface TrainerParts_experiences {
+  __typename: "Experience";
+  text: string;
+}
+
+export interface TrainerParts_workingAreas {
+  __typename: "WorkingArea";
+  text: string;
 }
 
 export interface TrainerParts_trainingPrograms {
@@ -123,10 +152,11 @@ export interface TrainerParts {
   id: number;
   user: TrainerParts_user;
   description: string;
-  licenses: (string | null)[] | null;
-  experiences: (string | null)[] | null;
+  licenses: (TrainerParts_licenses | null)[] | null;
+  experiences: (TrainerParts_experiences | null)[] | null;
   images: (string | null)[] | null;
   videos: (string | null)[] | null;
+  workingAreas: (TrainerParts_workingAreas | null)[] | null;
   trainingPrograms: (TrainerParts_trainingPrograms | null)[] | null;
 }
 

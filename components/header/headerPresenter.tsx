@@ -115,18 +115,12 @@ const AvatarContainer = styled.div`
 `;
 
 interface IProps {
-  fbLogin: () => void;
   isLoggedIn: boolean;
   user: getMe;
   onLogOutClick: () => void;
 }
 
-const Header: React.SFC<IProps> = ({
-  fbLogin,
-  isLoggedIn,
-  user,
-  onLogOutClick
-}) => (
+const Header: React.SFC<IProps> = ({ isLoggedIn, user, onLogOutClick }) => (
   <Container>
     <FlexWidthContainer>
       <NavColumn>
@@ -181,14 +175,14 @@ const Header: React.SFC<IProps> = ({
                       (userQuery &&
                         userQuery.Me &&
                         userQuery.Me.user &&
-                        userQuery.Me.user.username) ||
+                        userQuery.Me.user.email) ||
                         ""
                     )}
                     as={routes.asUserDetail(
                       (userQuery &&
                         userQuery.Me &&
                         userQuery.Me.user &&
-                        userQuery.Me.user.username) ||
+                        userQuery.Me.user.email) ||
                         ""
                     )}
                   >
@@ -199,14 +193,14 @@ const Header: React.SFC<IProps> = ({
                             (userQuery &&
                               userQuery.Me &&
                               userQuery.Me.user &&
-                              userQuery.Me.user.profilePhoto) ||
+                              userQuery.Me.user.profileImage) ||
                             "/static/demo.jpg"
                           }
                           alt={
                             (userQuery &&
                               userQuery.Me &&
                               userQuery.Me.user &&
-                              userQuery.Me.user.username) ||
+                              userQuery.Me.user.name) ||
                             "Profile"
                           }
                         />
@@ -224,7 +218,6 @@ const Header: React.SFC<IProps> = ({
                     Log Out
                   </span>
                 </li>
-                {/* <Notifications /> */}
               </ul>
             </Navigation>
           )}

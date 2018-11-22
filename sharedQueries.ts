@@ -1,23 +1,11 @@
 import { gql } from "apollo-boost";
-// import { GOAL_FRAGMENT } from "./fragments";
 
 export const LOG_USER_IN = gql`
-  mutation logUserIn(
-    $firstName: String!
-    $lastName: String!
-    $email: String
-    $fbId: String!
-  ) {
-    ConnectFB(
-      firstName: $firstName
-      lastName: $lastName
-      email: $email
-      fbId: $fbId
-    ) {
+  mutation logUserIn($email: String!, $password: String!) {
+    Login(email: $email, password: $password) {
       ok
       error
       token
-      isNew
     }
   }
 `;
@@ -27,24 +15,12 @@ export const GET_ME = gql`
     Me {
       user {
         id
-        username
+        email
+        name
         phoneNumber
-        profileDescription
-        profilePhoto
+        description
+        profileImage
       }
     }
   }
 `;
-
-// export const ADD_GOAL = gql`
-//   mutation createGoal($text: String!, $productId: Int!) {
-//     CreateGoal(text: $text, productId: $productId) {
-//       ok
-//       error
-//       goal {
-//         ...GoalParts
-//       }
-//     }
-//   }
-//   ${GOAL_FRAGMENT}
-// `;

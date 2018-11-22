@@ -1,6 +1,5 @@
 import React from "react";
 import Header, { FixedHeader } from "./headerPresenter";
-import withLogin from "../../lib/withLogin";
 import { getMe } from "types/api";
 import { toast } from "react-toastify";
 import logOut from "../../lib/logOut";
@@ -10,7 +9,6 @@ interface IState {
 }
 
 interface IProps {
-  fbLogin: () => void;
   isLoggedIn: boolean;
   user: getMe;
 }
@@ -34,19 +32,17 @@ class HeaderContainer extends React.Component<IProps, IState> {
   }
   render() {
     const { scrolled } = this.state;
-    const { fbLogin, isLoggedIn, user } = this.props;
+    const { isLoggedIn, user } = this.props;
 
     return (
       <React.Fragment>
         <Header
-          fbLogin={fbLogin}
           isLoggedIn={isLoggedIn}
           user={user}
           onLogOutClick={this.onLogOutClick}
         />
         {scrolled && (
           <FixedHeader
-            fbLogin={fbLogin}
             isLoggedIn={isLoggedIn}
             user={user}
             onLogOutClick={this.onLogOutClick}
@@ -64,4 +60,4 @@ class HeaderContainer extends React.Component<IProps, IState> {
   };
 }
 
-export default withLogin(HeaderContainer);
+export default HeaderContainer;

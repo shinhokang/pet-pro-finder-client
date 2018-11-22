@@ -7,7 +7,7 @@ const logIn = (token: string) => {
     });
   } else {
     Cookie.set("X-JWT", token, {
-      domain: ".localtunnel.me"
+      domain: ".localhost"
     });
     Cookie.set("X-JWT", token, {
       domain: "127.0.0.1"
