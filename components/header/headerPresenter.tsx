@@ -24,6 +24,8 @@ const Logo = styled.h1`
   margin-right: 25px;
   border-right: 1px solid ${props => props.theme.blackColor};
   padding-right: 25px;
+  cursor: pointer;
+  display: flex;
 `;
 
 const Navigation = styled.nav`
@@ -124,11 +126,12 @@ const Header: React.SFC<IProps> = ({ isLoggedIn, user, onLogOutClick }) => (
   <Container>
     <FlexWidthContainer>
       <NavColumn>
-        <Logo>
-          <Link prefetch href={routes.home}>
-            <a>Dog Problem</a>
-          </Link>
-        </Logo>
+        <Link prefetch href={routes.home}>
+          <Logo>
+            <img src="/static/logo_55x55.png" height={"30px"} />
+            Animal Mind
+          </Logo>
+        </Link>
         <Navigation>
           <ul>
             <li>
