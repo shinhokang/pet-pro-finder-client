@@ -66,7 +66,7 @@ const Footer = () => (
           </List>
         </Nav>
         <Copyright>
-          <Text>Dog Problem</Text>
+          <Text>애니멀 마인드</Text>
           <Text>
             &copy; {`${new Date().getFullYear()}`}{" "}
             <FLink
@@ -74,7 +74,7 @@ const Footer = () => (
               rel="noopener"
               target={"_blank"}
             >
-              Team Dog Problem
+              Team Animal Mind
             </FLink>
           </Text>
         </Copyright>
