@@ -85,7 +85,7 @@ export default class MyDocument extends Document {
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/static/favicon-16x16.png"
+            href="/static/logo_55x55.png"
           />
           <meta
             name="viewport"
