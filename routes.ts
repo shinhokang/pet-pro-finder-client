@@ -1,52 +1,53 @@
 export default {
-  home: "/",
-  join: "/join",
-  login: "/login",
-  term: "/term",
-  help: "/help",
-  trainers: "/trainers",
+  home: '/',
+  join: '/join',
+  registerTrainer: '/registerTraienr',
+  login: '/login',
+  term: '/term',
+  help: '/help',
+  trainers: '/trainers',
   trainerDetail: (id: number) => {
     return `/trainer?id=${id}`;
   },
   asTrainerDetail: (name: string) => {
-    const formatted = name.toLowerCase().replace(" ", "-");
+    const formatted = name.toLowerCase().replace(' ', '-');
     return `/trainer/${formatted}/`;
   },
 
-  makers: "/makers",
-  about: "/about",
-  community: "/community",
+  makers: '/makers',
+  about: '/about',
+  community: '/community',
 
-  blog: "/launched",
-  products: "/products",
-  todos: "/todos",
-  editProfile: "/edit-profile",
+  blog: '/launched',
+  products: '/products',
+  todos: '/todos',
+  editProfile: '/edit-profile',
   editProduct: (name: string) => `/edit-product?slug=${name}`,
   asEditProduct: (name: string) => `/edit-product/${name}`,
   blogDetail: (name: string) => `/review?slug=${name}`,
   asBlogDetail: (name: string) => `/review/${name}`,
-  new: "/new",
+  new: '/new',
   productDetail: (name: string) => {
-    const formatted = name.toLowerCase().replace(" ", "-");
+    const formatted = name.toLowerCase().replace(' ', '-');
     return `/product?slug=${formatted}`;
   },
   asProductDetail: (name: string) => {
-    const formatted = name.toLowerCase().replace(" ", "-");
+    const formatted = name.toLowerCase().replace(' ', '-');
     return `/product/${formatted}/`;
   },
   userDetail: (username: string) => `/maker?username=${username}`,
   asUserDetail: (username: string) => `/maker/${username}`,
   asProductsFn: (page: number, tab: string) =>
-    `/products${tab !== "UPDATED" ? `/${tab.toLowerCase()}` : ""}${
-      page === 0 ? "" : `?page=${page}`
+    `/products${tab !== 'UPDATED' ? `/${tab.toLowerCase()}` : ''}${
+      page === 0 ? '' : `?page=${page}`
     }`,
   asMakersFn: (page: number, tab: string) =>
-    `/makers${tab !== "FIRE" ? `/${tab.toLowerCase()}` : ""}${
-      page === 0 ? "" : `?page=${page}`
+    `/makers${tab !== 'FIRE' ? `/${tab.toLowerCase()}` : ''}${
+      page === 0 ? '' : `?page=${page}`
     }`,
   asToDosFn: (page: number, tab: string) =>
-    `/todos${tab !== "COMPLETED" ? `/${tab.toLowerCase()}` : ""}${
-      page === 0 ? "" : `?page=${page}`
+    `/todos${tab !== 'COMPLETED' ? `/${tab.toLowerCase()}` : ''}${
+      page === 0 ? '' : `?page=${page}`
     }`,
   productsFn: (page: number, tab: string) =>
     `/products?tab=${tab}&page=${page}`,
@@ -56,5 +57,5 @@ export default {
   makerDone: (username: string) => `/maker?username=${username}&tab=done`,
   asMakerDone: (username: string) => `/maker/${username}/done`,
   toDosFn: (page: number, tab: string) => `/todos?tab=${tab}&page=${page}`,
-  addProduct: "/new"
+  addProduct: '/new',
 };

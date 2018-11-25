@@ -1,12 +1,12 @@
-import Link from "next/link";
-import routes from "../../routes";
-import styled, { keyframes } from "../../typed-components";
-import Button from "../button";
-import RoundImage from "../roundImage";
-import { getMe } from "types/api";
-import { Consumer } from "../../lib/context";
+import Link from 'next/link';
+import routes from '../../routes';
+import styled, { keyframes } from '../../typed-components';
+import Button from '../button';
+import RoundImage from '../roundImage';
+import { getMe } from 'types/api';
+import { Consumer } from '../../lib/context';
 
-const Container = styled("header")`
+const Container = styled('header')`
   width: 100%;
   padding: 20px 5px;
   background-color: white;
@@ -18,7 +18,7 @@ const Container = styled("header")`
 `;
 
 const Logo = styled.h1`
-  font-family: "Nunito";
+  font-family: 'Nunito';
   font-weight: 700;
   font-size: 20px;
   margin-right: 25px;
@@ -128,7 +128,7 @@ const Header: React.SFC<IProps> = ({ isLoggedIn, user, onLogOutClick }) => (
       <NavColumn>
         <Link prefetch href={routes.home}>
           <Logo>
-            <img src="/static/logo_55x55.png" height={"30px"} />
+            <img src="/static/logo_55x55.png" height={'30px'} />
             Animal Mind
           </Logo>
         </Link>
@@ -179,14 +179,14 @@ const Header: React.SFC<IProps> = ({ isLoggedIn, user, onLogOutClick }) => (
                         userQuery.Me &&
                         userQuery.Me.user &&
                         userQuery.Me.user.email) ||
-                        ""
+                        ''
                     )}
                     as={routes.asUserDetail(
                       (userQuery &&
                         userQuery.Me &&
                         userQuery.Me.user &&
                         userQuery.Me.user.email) ||
-                        ""
+                        ''
                     )}
                   >
                     <a>
@@ -197,28 +197,36 @@ const Header: React.SFC<IProps> = ({ isLoggedIn, user, onLogOutClick }) => (
                               userQuery.Me &&
                               userQuery.Me.user &&
                               userQuery.Me.user.profileImage) ||
-                            "/static/demo.jpg"
+                            '/static/demo.jpg'
                           }
                           alt={
                             (userQuery &&
                               userQuery.Me &&
                               userQuery.Me.user &&
                               userQuery.Me.user.name) ||
-                            "Profile"
+                            'Profile'
                           }
                         />
                       </AvatarContainer>
                     </a>
                   </Link>
                 </li>
+                {userQuery &&
+                userQuery.Me &&
+                userQuery.Me.user &&
+                !userQuery.Me.user.isTrainer ? (
+                  <li>
+                    <Link prefetch href={routes.registerTrainer}>
+                      <a>전문가 등록</a>
+                    </Link>
+                  </li>
+                ) : (
+                  ''
+                )}
+
                 <li>
-                  <Link prefetch href={routes.new}>
-                    <a>Add Product</a>
-                  </Link>
-                </li>
-                <li>
-                  <span style={{ cursor: "pointer" }} onClick={onLogOutClick}>
-                    Log Out
+                  <span style={{ cursor: 'pointer' }} onClick={onLogOutClick}>
+                    로그아웃
                   </span>
                 </li>
               </ul>

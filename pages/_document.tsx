@@ -1,5 +1,5 @@
-import Document, { Head, Main, NextScript } from "next/document";
-import { ServerStyleSheet } from "styled-components";
+import Document, { Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <title>Dog Problem | ...</title>
+          <title>Animal Mind</title>
           <link href="/static/global.css" rel="stylesheet" />
           {this.props.styleTags}
           <link
@@ -91,8 +91,8 @@ export default class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <meta name="theme-color" content={"#F6F9FC"} />
-          <link rel="manifest" href={"/static/manifest.json"} />
+          <meta name="theme-color" content={'#F6F9FC'} />
+          <link rel="manifest" href={'/static/manifest.json'} />
         </Head>
         <body>
           <Main />

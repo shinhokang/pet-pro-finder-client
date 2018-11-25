@@ -97,8 +97,8 @@ const JoinHero = styled.div`
 const About = ({ fbLogin }) => (
   <React.Fragment>
     <Head>
-      <title>About | Dog Problem</title>
-      <meta name="description" content={"Dog Problem"} />
+      <title>Animal Mind | About</title>
+      <meta name="description" content={"Animal Mind"} />
     </Head>
     <Wrapper>
       <Container>

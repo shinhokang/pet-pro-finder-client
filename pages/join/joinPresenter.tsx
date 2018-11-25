@@ -1,13 +1,13 @@
-import React from "react";
-import Head from "next/head";
-import styled from "../../typed-components";
-import Wrapper from "../../components/wrapper";
-import Card from "../../components/card";
-import Input from "../../components/input";
-import Title from "../../components/title";
-import Form from "../../components/form";
-import Button from "../../components/button";
-import SocialLogin from "../../components/socialLogin";
+import React from 'react';
+import Head from 'next/head';
+import styled from '../../typed-components';
+import Wrapper from '../../components/wrapper';
+import Card from '../../components/card';
+import Input from '../../components/input';
+import Title from '../../components/title';
+import Form from '../../components/form';
+import Button from '../../components/button';
+import SocialLogin from '../../components/socialLogin';
 
 const Container = styled.div`
   max-width: 500px;
@@ -64,11 +64,11 @@ const JoinPresenter: React.SFC<IProps> = ({
   password,
   phoneNumber,
   handleInputChange,
-  handleJoin
+  handleJoin,
 }) => (
   <Wrapper>
     <Head>
-      <title>Dog Problem | 회원가입</title>
+      <title>Animal Mind | 회원가입</title>
     </Head>
     <Container>
       <ETitle>회원가입</ETitle>
@@ -77,33 +77,33 @@ const JoinPresenter: React.SFC<IProps> = ({
           <FormInputs>
             <EInput
               required={true}
-              type={"text"}
-              name={"name"}
-              placeholder={"이름 *"}
+              type={'text'}
+              name={'name'}
+              placeholder={'이름 *'}
               value={name}
               onChange={handleInputChange}
             />
             <EInput
               required={true}
-              type={"email"}
-              name={"email"}
-              placeholder={"Email *"}
+              type={'email'}
+              name={'email'}
+              placeholder={'Email *'}
               value={email}
               onChange={handleInputChange}
             />
             <EInput
               required={true}
-              type={"password"}
-              name={"password"}
-              placeholder={"Password *"}
+              type={'password'}
+              name={'password'}
+              placeholder={'Password *'}
               value={password}
               onChange={handleInputChange}
             />
             <EInput
               required={false}
-              type={"text"}
-              name={"phoneNumber"}
-              placeholder={"전화번호"}
+              type={'text'}
+              name={'phoneNumber'}
+              placeholder={'전화번호'}
               value={phoneNumber}
               onChange={handleInputChange}
             />
@@ -115,7 +115,7 @@ const JoinPresenter: React.SFC<IProps> = ({
           </EFormButtons>
         </EForm>
       </Card>
-      <SocialLogin />
+      {/* <SocialLogin /> */}
     </Container>
   </Wrapper>
 );

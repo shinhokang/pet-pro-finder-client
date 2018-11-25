@@ -40,8 +40,8 @@ export default class extends React.Component<IProps> {
     return (
       <Container>
         <Head>
-          <title>Dog Problem | ...</title>
-          <meta name="description" content={"Dog Problem: ..."} />
+          <title>Animal Mind | Home</title>
+          <meta name="description" content={"Animal Mind: ..."} />
         </Head>
 
         <React.Fragment>

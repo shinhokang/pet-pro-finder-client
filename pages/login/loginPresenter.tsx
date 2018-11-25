@@ -1,15 +1,15 @@
-import React from "react";
-import Head from "next/head";
-import styled from "../../typed-components";
-import Wrapper from "../../components/wrapper";
-import Card from "../../components/card";
-import Input from "../../components/input";
-import Title from "../../components/title";
-import Form from "../../components/form";
-import Button from "../../components/button";
-import routes from "../../routes";
-import Link from "next/link";
-import SocialLogin from "../../components/socialLogin";
+import React from 'react';
+import Head from 'next/head';
+import styled from '../../typed-components';
+import Wrapper from '../../components/wrapper';
+import Card from '../../components/card';
+import Input from '../../components/input';
+import Title from '../../components/title';
+import Form from '../../components/form';
+import Button from '../../components/button';
+import routes from '../../routes';
+import Link from 'next/link';
+import SocialLogin from '../../components/socialLogin';
 
 const Container = styled.div`
   max-width: 500px;
@@ -62,11 +62,11 @@ const LoginPresenter: React.SFC<IProps> = ({
   email,
   password,
   handleInputChange,
-  handleLogin
+  handleLogin,
 }) => (
   <Wrapper>
     <Head>
-      <title>Dog Problem | 로그인</title>
+      <title>Animal Mind | 로그인</title>
     </Head>
     <Container>
       <ETitle>로그인</ETitle>
@@ -75,17 +75,17 @@ const LoginPresenter: React.SFC<IProps> = ({
           <FormInputs>
             <EInput
               required={true}
-              type={"text"}
-              name={"email"}
-              placeholder={"Email *"}
+              type={'text'}
+              name={'email'}
+              placeholder={'Email *'}
               value={email}
               onChange={handleInputChange}
             />
             <EInput
               required={true}
-              type={"password"}
-              name={"password"}
-              placeholder={"Password *"}
+              type={'password'}
+              name={'password'}
+              placeholder={'Password *'}
               value={password}
               onChange={handleInputChange}
             />
@@ -102,7 +102,7 @@ const LoginPresenter: React.SFC<IProps> = ({
           </EFormButtons>
         </EForm>
       </Card>
-      <SocialLogin />
+      {/* <SocialLogin /> */}
     </Container>
   </Wrapper>
 );

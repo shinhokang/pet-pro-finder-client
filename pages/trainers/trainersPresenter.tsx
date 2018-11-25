@@ -26,10 +26,10 @@ const TrainersPresenter: React.SFC<IProps> = ({
 }) => (
   <Wrapper>
     <Head>
-      <title>Dog Problem | 훈련사</title>
+      <title>Animal Mind | 훈련사</title>
       <meta
         name="description"
-        content={`Find all trainers being registered in Dog Problem`}
+        content={`Find all trainers being registered in Animal Mind`}
       />
     </Head>
     <Tabs>
