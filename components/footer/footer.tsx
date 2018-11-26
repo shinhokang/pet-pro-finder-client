@@ -1,7 +1,7 @@
-import Link from "next/link";
-import styled from "../../typed-components";
-import Wrapper from "../wrapper";
-import routes from "../../routes";
+import Link from 'next/link';
+import styled from '../../typed-components';
+import Wrapper from '../wrapper';
+import routes from '../../routes';
 
 const Container = styled.div`
   background-color: ${props => props.theme.blackColor};
@@ -34,6 +34,10 @@ const SLink = styled.li`
   }
 `;
 
+const A = styled.a`
+  color: ${props => props.theme.whiteColor};
+`;
+
 const Copyright = styled.div`
   grid-column-start: 4;
   align-self: flex-end;
@@ -45,6 +49,7 @@ const Text = styled.div`
 
 const FLink = styled.a`
   text-decoration: underline;
+  color: ${props => props.theme.whiteColor};
 `;
 
 const Footer = () => (
@@ -55,12 +60,12 @@ const Footer = () => (
           <List>
             <SLink>
               <Link prefetch href={routes.term}>
-                <a>약관</a>
+                <A>약관</A>
               </Link>
             </SLink>
             <SLink>
               <Link prefetch href={routes.help}>
-                <a>도움말</a>
+                <A>도움말</A>
               </Link>
             </SLink>
           </List>
@@ -68,11 +73,11 @@ const Footer = () => (
         <Copyright>
           <Text>애니멀 마인드</Text>
           <Text>
-            &copy; {`${new Date().getFullYear()}`}{" "}
+            &copy; {`${new Date().getFullYear()}`}{' '}
             <FLink
-              href={"https://shinhokang.github.io/"}
+              href={'https://shinhokang.github.io/'}
               rel="noopener"
-              target={"_blank"}
+              target={'_blank'}
             >
               Team Animal Mind
             </FLink>
