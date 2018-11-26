@@ -145,7 +145,7 @@ interface IContainerProps {
   linkAs?: string;
 }
 
-const BigDetailCardContainer: React.SFC<IContainerProps & IPresenterProps> = ({
+const TrainerCardContainer: React.SFC<IContainerProps & IPresenterProps> = ({
   isLink,
   link,
   linkAs,
@@ -174,4 +174,4 @@ const BigDetailCardContainer: React.SFC<IContainerProps & IPresenterProps> = ({
   }
 };
 
-export default BigDetailCardContainer;
+export default TrainerCardContainer;

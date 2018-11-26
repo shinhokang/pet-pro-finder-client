@@ -1,7 +1,7 @@
-import LazyLoad from "react-lazyload";
-import styled from "../../typed-components";
+import LazyLoad from 'react-lazyload';
+import styled from '../../typed-components';
 
-const SquareImage = styled<any, any>("div")`
+const SquareImage = styled<any, any>('div')`
   background-image: url(${props => props.src});
   background-size: cover;
   background-position: center center;
@@ -16,7 +16,7 @@ interface IProps {
 }
 
 const SquareImageC: React.SFC<IProps> = ({ src, className, alt }) => (
-  <LazyLoad once height={"80px"}>
+  <LazyLoad once height={'80px'}>
     <SquareImage src={src} alt={alt} className={className} />
   </LazyLoad>
 );

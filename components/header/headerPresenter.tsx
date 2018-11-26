@@ -35,6 +35,9 @@ const Navigation = styled.nav`
     flex-wrap: wrap;
     & li {
       margin-right: 25px;
+      font-family: 'Nunito';
+      font-weight: 700;
+      font-size: 16px;
     }
   }
   @media (max-width: 785px) {

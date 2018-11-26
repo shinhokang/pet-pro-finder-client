@@ -5,38 +5,19 @@ export default {
   login: '/login',
   term: '/term',
   help: '/help',
-  trainers: '/trainers',
-  trainerDetail: (id: number) => {
-    return `/trainer?id=${id}`;
-  },
-  asTrainerDetail: (name: string) => {
-    const formatted = name.toLowerCase().replace(' ', '-');
-    return `/trainer/${formatted}/`;
-  },
-
-  makers: '/makers',
   about: '/about',
   community: '/community',
+  
+  trainers: '/trainers',
+  trainerDetail: (id: number) => {
+    return `/trainer?trainerId=${id}`;
+  },
+  asTrainerDetail: (id: number) => {
+    return `/trainer/${id}/`;
+  },
 
-  blog: '/launched',
-  products: '/products',
-  todos: '/todos',
-  editProfile: '/edit-profile',
-  editProduct: (name: string) => `/edit-product?slug=${name}`,
-  asEditProduct: (name: string) => `/edit-product/${name}`,
-  blogDetail: (name: string) => `/review?slug=${name}`,
-  asBlogDetail: (name: string) => `/review/${name}`,
-  new: '/new',
-  productDetail: (name: string) => {
-    const formatted = name.toLowerCase().replace(' ', '-');
-    return `/product?slug=${formatted}`;
-  },
-  asProductDetail: (name: string) => {
-    const formatted = name.toLowerCase().replace(' ', '-');
-    return `/product/${formatted}/`;
-  },
-  userDetail: (username: string) => `/maker?username=${username}`,
-  asUserDetail: (username: string) => `/maker/${username}`,
+  userDetail: (username: string) => `/user?username=${username}`,
+  asUserDetail: (username: string) => `/user/${username}`,
   asProductsFn: (page: number, tab: string) =>
     `/products${tab !== 'UPDATED' ? `/${tab.toLowerCase()}` : ''}${
       page === 0 ? '' : `?page=${page}`
@@ -57,5 +38,5 @@ export default {
   makerDone: (username: string) => `/maker?username=${username}&tab=done`,
   asMakerDone: (username: string) => `/maker/${username}/done`,
   toDosFn: (page: number, tab: string) => `/todos?tab=${tab}&page=${page}`,
-  addProduct: '/new',
+  
 };

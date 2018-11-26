@@ -1,2 +1,2 @@
-import TrainersContainer from "./trainersContainer";
+import TrainersContainer from './trainersContainer';
 export default TrainersContainer;

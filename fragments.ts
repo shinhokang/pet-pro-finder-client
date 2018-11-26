@@ -1,30 +1,25 @@
-import { gql } from "apollo-boost";
+import { gql } from 'apollo-boost';
 
 export const TRAINER_FRAGMENT = gql`
   fragment TrainerParts on Trainer {
     id
-    user {
-      name
-      description
-      profileImage
-    }
     title
     description
     images
     videos
     experiences {
-      text
+      id
       period
-    }
-    licenses {
-      name
-      organization
-    }
-    workingAreas {
       text
+    }
+    user {
+      email
+      name
+      phoneNumber
+      description
+      profilePhoto
     }
     trainingPrograms {
-      id
       title
       description
       price
@@ -33,8 +28,43 @@ export const TRAINER_FRAGMENT = gql`
       problemCategories {
         id
         name
-        order
       }
+    }
+    comments {
+      id
+      text
+      user {
+        name
+      }
+      childComments {
+        id
+        text
+        user {
+          name
+        }
+      }
+    }
+    reviews {
+      title
+      text
+      ratingForExpertise
+      ratingForFriendliness
+      user {
+        name
+      }
+      problemCategories {
+        name
+      }
+    }
+    favorites {
+      marked
+    }
+    workingAreas {
+      text
+    }
+    licenses {
+      name
+      organization
     }
   }
 `;

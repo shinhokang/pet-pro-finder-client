@@ -87,12 +87,18 @@ export default class MyDocument extends Document {
             sizes="16x16"
             href="/static/logo_55x55.png"
           />
+          <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.8.1/antd.min.css"
+            rel="stylesheet"
+          />
+
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
           <meta name="theme-color" content={'#F6F9FC'} />
           <link rel="manifest" href={'/static/manifest.json'} />
+          <style>{`a { color: black } /* custom! */`}</style>
         </Head>
         <body>
           <Main />

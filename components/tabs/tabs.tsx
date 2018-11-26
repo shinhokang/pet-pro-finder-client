@@ -1,9 +1,9 @@
-import styled from "../../typed-components";
+import styled from '../../typed-components';
 
 const Container = styled.header`
   display: flex;
   flex-wrap: wrap;
-  margin: 50px 0;
+  margin: 10px 0;
   & > * {
     margin-right: 20px;
   }
