@@ -3,7 +3,7 @@ import Cookie from 'js-cookie';
 const logIn = (token: string) => {
   if (process.env.NODE_ENV === 'production') {
     Cookie.set('X-JWT', token, {
-      domain: 'animalmind.net',
+      domain: 'kangshinho.net',
     });
   } else {
     Cookie.set('X-JWT', token, {

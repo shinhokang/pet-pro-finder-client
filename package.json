@@ -1,5 +1,5 @@
 {
-  "name": "petprofinder-client",
+  "name": "animalmind-client",
   "version": "1.0.0",
   "scripts": {
     "dev": "node server.js",
@@ -57,9 +57,5 @@
     "tslint-config-prettier": "^1.14.0",
     "tslint-react": "^3.6.0",
     "typescript": "^2.9.2"
-  },
-  "now": {
-    "name": "petprofinder-client",
-    "alias": "petprofinder-api"
   }
 }
