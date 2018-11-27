@@ -1,9 +1,9 @@
-const express = require("express");
-const next = require("next");
-const compression = require("compression");
-const path = require("path");
+const express = require('express');
+const next = require('next');
+const compression = require('compression');
+const path = require('path');
 
-const dev = process.env.NODE_ENV !== "production";
+const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev, quiet: false });
 const handle = app.getRequestHandler();
 
@@ -15,8 +15,8 @@ app
 
     server.get('/trainer/:id', (req, res) => {
       const actualPage = '/trainer';
-      const {params} = req;
-      const queryParams = { trainerId: params.trainerId};
+      const { params } = req;
+      const queryParams = { trainerId: params.trainerId };
       app.render(req, res, actualPage, queryParams);
     });
 
@@ -27,13 +27,13 @@ app
     //   app.render(req, res, actualPage, queryParams);
     // });
 
-    server.get("*", (req, res) => {
+    server.get('*', (req, res) => {
       return handle(req, res);
     });
 
-    server.listen(3000, err => {
+    server.listen(8081, err => {
       if (err) throw err;
-      console.log("> Ready on http://localhost:3000");
+      console.log('> Ready on port 8081');
     });
   })
   .catch(ex => {

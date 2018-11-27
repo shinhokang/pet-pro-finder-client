@@ -8,7 +8,7 @@
     "codegen:frontend": "apollo codegen:generate types/api.d.ts --queries='**/!(*.local|*.blog).ts' --addTypename --schema frontendSchema.json --target typescript --outputFlat",
     "codegen": "yarn run codegen:frontend",
     "precodegen:frontend": "apollo schema:download frontendSchema.json --endpoint=http://localhost:4000/graphql",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next build && NODE_ENV=production node server.js",
     "tunnel": "lt --port 3000"
   },
   "repository": {
